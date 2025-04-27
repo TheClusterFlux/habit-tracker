@@ -1,0 +1,39 @@
+{
+  "name": "habit-tracker",
+  "version": "1.0.0",
+  "description": "A minimalist habit tracker that suggests random habits to build consistency",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "lint": "eslint .",
+    "test": "jest",
+    "build": "echo 'No build step required for this application'",
+    "docker:build": "docker build -t habit-tracker .",
+    "docker:run": "docker run -p 8080:8080 habit-tracker"
+  },
+  "keywords": [
+    "habit",
+    "tracker",
+    "productivity",
+    "self-improvement",
+    "daily-habits"
+  ],
+  "author": "TheClusterFlux",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheClusterFlux/habit-tracker.git"
+  }
+}

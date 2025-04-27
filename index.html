@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="A simple habit tracker that suggests random habits to build consistency">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Random Habit Tracker</h1>
+            <p>Build habits, one surprise at a time.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="habit-section">
+            <div class="habit-card">
+                <h2 id="habit-title">Next Habit</h2>
+                <p id="habit-description">Drink a glass of water.</p>
+                <div class="habit-actions">
+                    <button id="complete-btn" class="primary-btn"><i class="fas fa-check"></i> Mark as Completed</button>
+                    <button id="skip-btn" class="secondary-btn"><i class="fas fa-forward"></i> Skip</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <h3>Your Progress</h3>
+            <div id="streak">Current Streak: 0 days</div>
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+            
+            <div class="data-controls">
+                <button id="toggle-summary" class="secondary-btn"><i class="fas fa-list"></i> View Completed Habits</button>
+                <button id="export-btn" class="secondary-btn"><i class="fas fa-download"></i> Export Data</button>
+            </div>
+            
+            <h4>Habit Summary:</h4>
+            <ul id="habit-summary-list"></ul>
+            <ul id="completed-habits-list" style="display: none;"></ul>
+        </section>
+        
+        <section class="stats-section">
+            <h3>Statistics</h3>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h4>Total Habits</h4>
+                    <p id="total-habits">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Best Streak</h4>
+                    <p id="best-streak">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>This Week</h4>
+                    <p id="this-week">0</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>TheClusterFlux Habit Tracker &copy; 2025</p>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
