@@ -102,9 +102,22 @@ const server = http.createServer((req, res) => {
 
         fs.readFile(filePath, (err, content) => {
             if (err) {
-                console.error(`Error reading file: ${err}`);
-                res.writeHead(500);
-                res.end('Server Error');
+                if (err.code === 'ENOENT') {
+                    console.log(`File not found: ${filePath}`);
+                    fs.readFile('./index.html', (error, indexContent) => {
+                        if (error) {
+                            res.writeHead(500);
+                            res.end('Server Error');
+                        } else {
+                            res.writeHead(200, { 'Content-Type': 'text/html' });
+                            res.end(indexContent, 'utf-8');
+                        }
+                    });
+                } else {
+                    console.error(`Server error: ${err}`);
+                    res.writeHead(500);
+                    res.end('Server Error');
+                }
             } else {
                 res.writeHead(200, headers);
                 res.end(content, 'utf-8');
